@@ -1,0 +1,43 @@
+# Give the workflow a clear name in GitHub Actions.
+name: CI
+
+# Validate every pull request and every push to the main branch.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Prevent overlapping runs for the same branch from wasting minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # GitHub provides this clean Linux runner for each validation.
+    runs-on: ubuntu-latest
+
+    steps:
+      # Download the exact repository revision being checked.
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      # Match the Node version required by current Supabase packages.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # npm ci installs exactly the versions recorded in package-lock.json.
+      - name: Install dependencies
+        run: npm ci
+
+      # TypeScript and unit tests must both pass before code can merge.
+      - name: Validate source
+        run: npm run check
+
+      # A Cloudflare dry run validates bundling and Wrangler configuration.
+      - name: Validate Worker bundle
+        run: npm run build

@@ -1,0 +1,28 @@
+# Installed packages are reproducible from package-lock.json.
+node_modules/
+
+# Wrangler's local state can contain deployment metadata and must remain local.
+.wrangler/
+
+# Local secrets must never enter Git history.
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# Dry-run and production bundles are generated from source.
+dist/
+
+# Test coverage is generated and reproducible.
+coverage/
+
+# Operating-system and editor scratch files do not belong to the project.
+.DS_Store
+*.log
+
+# The source video and extracted analysis frames are reference-only.
+upload/
+video-analysis/
+
+# Delivery archives are built after validation and are not source files.
+*.zip

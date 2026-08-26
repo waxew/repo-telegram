@@ -1,0 +1,23 @@
+<!-- This fallback artwork is used only until a shop owner uploads a custom start image. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <!-- Accessible text describes the artwork to tools that do not render SVG. -->
+  <title id="title">Telegram Shop Builder</title>
+  <description id="description">A purple and blue storefront with a shopping bag.</description>
+  <!-- The gradient recreates the dark purple Telegram-style visual language. -->
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15152a"/>
+      <stop offset="0.55" stop-color="#5b21b6"/>
+      <stop offset="1" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded outer card remains legible in Telegram's light and dark themes. -->
+  <rect width="1200" height="630" rx="56" fill="url(#background)"/>
+  <!-- Minimal storefront icon keeps the default artwork brand-neutral. -->
+  <path d="M445 242h310l44 82H401l44-82Z" fill="#f8fafc" opacity=".95"/>
+  <path d="M430 324h340v178H430z" fill="#f8fafc" opacity=".9"/>
+  <path d="M548 372h104v130H548z" fill="#7c3aed"/>
+  <!-- Persian title communicates the product even before customization. -->
+  <text x="600" y="150" text-anchor="middle" font-family="Tahoma, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">فروشگاه تلگرامی شما</text>
+  <text x="600" y="565" text-anchor="middle" font-family="Tahoma, Arial, sans-serif" font-size="34" fill="#e0f2fe">سریع، ساده و قابل شخصی‌سازی</text>
+</svg>

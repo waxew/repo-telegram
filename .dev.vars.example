@@ -1,0 +1,17 @@
+# Token of the central bot-builder created in BotFather.
+BUILDER_BOT_TOKEN=123456789:replace_with_real_token
+
+# Random value registered as Telegram's secret_token for the central webhook.
+BUILDER_WEBHOOK_SECRET=replace_with_a_long_random_value
+
+# Public HTTPS origin of this Worker, without a trailing slash.
+PUBLIC_BASE_URL=https://repo-telegram.example.workers.dev
+
+# URL shown in Supabase Project Settings > Data API.
+SUPABASE_URL=https://your-project.supabase.co
+
+# Backend-only sb_secret key; a legacy service_role key also works during migration.
+SUPABASE_SECRET_KEY=sb_secret_replace_me
+
+# Base64-encoded 32-byte key used to encrypt every customer bot token at rest.
+TOKEN_ENCRYPTION_KEY=replace_with_base64_32_byte_key

@@ -1,0 +1,32 @@
+{
+  // This schema lets editors validate every Wrangler setting while you type.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+
+  // This is the public Cloudflare Worker name used after deployment.
+  "name": "repo-telegram",
+
+  // This file receives builder-bot and customer-bot webhook requests.
+  "main": "src/index.ts",
+
+  // A current compatibility date opts the project into tested runtime behavior.
+  "compatibility_date": "2026-08-26",
+
+  // Some pinned packages use Node-compatible APIs internally on Workers.
+  "compatibility_flags": ["nodejs_compat"],
+
+  // These values are safe configuration; credentials are Wrangler secrets instead.
+  "vars": {
+    "APP_ENV": "production"
+  },
+
+  // A minute cron advances queued broadcasts without delaying Telegram webhooks.
+  "triggers": {
+    "crons": ["* * * * *"]
+  },
+
+  // Structured Worker logs make webhook and delivery failures diagnosable.
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}
